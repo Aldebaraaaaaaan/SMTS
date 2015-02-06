@@ -1,8 +1,8 @@
 
-#include "Gps.h"
-#include "Bat.h"
-#include "Cardio.h"
-#include "Temp.h"
+#include "gps.h"
+#include "bat.h"
+#include "cardio.h"
+#include "temp.h"
 
 class Info {
 	private:

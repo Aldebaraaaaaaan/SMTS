@@ -3,7 +3,7 @@
 
 Cardio::Cardio() {
 	val = 0;
-	pin = 1; // A1
+	pin = A1; // A1
 	}
 
 Cardio::~Cardio() {

@@ -3,7 +3,7 @@
 
 Temp::Temp() {
 	val = 0;
-	pin = 0; // A0
+	pin = A0; // A0
 	}
 
 Temp::~Temp() {

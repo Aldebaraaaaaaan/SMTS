@@ -1,7 +1,7 @@
 
 #include "info.h"
 
-// les deux booleens determine si on veut la température et le cardio
+// les deux booleens determine si on veut ou non la température et le cardio
 Info::Info(bool _cardio, bool _temp) {
 	gps = new Gps();
 	bat = new Bat();
