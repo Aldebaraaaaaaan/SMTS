@@ -12,7 +12,7 @@ Bat::Bat() {
 	}
 
 Bat::~Bat() {
-	
+	dfvdfvdf
 	}
 
 void Bat::recupInfo() {
