@@ -1,39 +1,36 @@
-#include "sms.h"
-#include <string>
+#include "SMS.h"
 
-Sms::Sms() {
-	string _sendMessage = NULL;
+SMS::SMS() {
 	char _numTel[10];
 	}
 
-Sms::~Sms() {
+SMS::~SMS() {
 	
 	}
 
-int Sms::sendSms(string _message) {
+void SMS::sendData(char *_data) {
 	int error = 0;
 	while(!LSMS.ready()) {
 		delay(1000);
 		error++;
-		if(error >= 10) return error;
+		if(error >= 10) throw error; // propagation de l'erreur
 		}
 
-	LSMS.beginSms(_numtel);
-	LSMS.print(_sendMessage);
-	LSMS.endSms();
-
-	return 0;
+	LSMS.beginSMS(_numtel);
+	LSMS.print(_data);
+	LSMS.endSMS();
 	}
 
-char *Sms::receiveSms() { // retourne le premier Sms reçu
+char *SMS::receiveData() { // retourne le premier SMS reçu
 	char *_message = new char[50];	*(_message+0) = '\0'; // Message received
-	int c;			// Chars of Sms
+	int c;			// Chars of SMS
 	int n=0;		// Increment
 	char _buf[10];
 
 	while(!LSMS.ready()) {
 		delay(1000);
 		}
+
 	if(LSMS.available()){
 		LSMS.remoteNumber(_buf,10);	// Number stored
 
@@ -49,15 +46,15 @@ char *Sms::receiveSms() { // retourne le premier Sms reçu
 	return NULL;
 	}
 
-char *Sms::dernierSms() { // retourne le Sms le plus récent
+char *SMS::lastData() { // retourne le SMS le plus récent
 	char *buf;
 	int t = 0, prect = 0, intervalle = 0, com = 0, cardio = 0, temp = 0;
 
-	buf = receiveSms();
+	buf = receiveSMS();
 	sscanf(buf, "%d %d %d %d %d", &prect, &intervalle, &cardio, &temp, &com);
 	
 	while(buf != NULL) {
-		buf = receiveSms();
+		buf = receiveSMS();
 		sscanf(buf, "%d", &t);
 
 		if(t > prect) {
