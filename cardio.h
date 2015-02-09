@@ -1,3 +1,5 @@
+#ifndef CARDIO_H
+#define CARDIO_H
 
 class Cardio {
 	private:
@@ -9,4 +11,6 @@ class Cardio {
 		void recupInfo();
 		int getVal();
 	}
+
+#endif
 

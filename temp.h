@@ -1,3 +1,5 @@
+#ifndef TEMP_H
+#define TEMP_H
 
 class Temp {
 	private:
@@ -9,4 +11,6 @@ class Temp {
 		void recupInfo();
 		int getVal();
 	}
+
+#endif
 

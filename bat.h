@@ -1,3 +1,5 @@
+#ifndef BAT_H
+#define BAT_H
 
 class Bat {
 	private:
@@ -9,4 +11,6 @@ class Bat {
 		void recupInfo();
 		int getVal();
 	}
+
+#endif
 

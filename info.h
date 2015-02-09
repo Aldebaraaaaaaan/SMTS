@@ -1,3 +1,5 @@
+#ifndef INFO_H
+#define INFO_H
 
 #include "gps.h"
 #include "bat.h"
@@ -19,4 +21,6 @@ class Info {
 		Cardio *getCardio();
 		Temp *getTemp();
 	}
+
+#endif
 

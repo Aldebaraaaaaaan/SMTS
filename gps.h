@@ -1,3 +1,5 @@
+#ifndef GPS_H
+#define GPS_H
 
 #include <LGPS.h>
 #include <LDateTime.h>
@@ -17,4 +19,6 @@ class Gps {
 		float getLon();
 		datetimeInfo getDate();
 	}
+
+#endif
 
